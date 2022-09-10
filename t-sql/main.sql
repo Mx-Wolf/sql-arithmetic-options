@@ -1,6 +1,3 @@
-set ansi_warnings OFF
-set arithabort off
-
 declare @a int = 1,
 @b int = 0;
 
