@@ -1,8 +1,13 @@
 ﻿var a = 1;
 var b = GetDenominator(0);
-
-Console.WriteLine(a/b);
-Console.WriteLine("Completed");
+try
+{
+    Console.WriteLine(a / b);
+}
+finally
+{
+    Console.WriteLine("Completed");
+}
 
 int GetDenominator(int v)
 {
