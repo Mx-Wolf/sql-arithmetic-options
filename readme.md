@@ -77,6 +77,24 @@ The most clear wording on data type `float` comes (surprise) from the article on
 
 This information important for refactoring legacy stored procedures while extracting computation logic.
 
+## Stored procedures magic
+
+Many seasoned sql server developers with stored procedures experience will tell you a story of magic SSMS being able to execute their t-sql code faster compare to their backend applications. Their experience tell all sort of tricks like this one
+
+```sql
+CREATE PROCEDURE get_orders_variable
+  @bop DATETIME
+AS
+BEGIN
+  DECLARE @bop_copy DATETIME;
+  set @bop_copy = @bop;
+
+  SELECT o.OrderID 
+  FROM Orders o 
+  WHERE o.OrderDate > @bop_copy;
+END
+```
+
 ## Tools and Technologies
 
 We submit requests to SQL server using different tools
